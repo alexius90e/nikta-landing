@@ -1,0 +1,91 @@
+.hierarchy {
+  &__title {
+    max-width: 812px;
+    margin: 0 0 20px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 80px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px 40px;
+
+    @include laptop {
+      gap: 60px 40px;
+    }
+
+    @include tablet {
+      gap: 45px 40px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(100% / 3 - 40px / 3 * 2);
+    gap: 28px;
+
+    @include laptop {
+      gap: 16px;
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 132px;
+      height: 132px;
+      border-radius: 15px;
+      background-color: #3bb4d1;
+
+      @include laptop {
+        width: 75px;
+        height: 75px;
+      }
+
+      @include mobile {
+        width: 48px;
+        height: 48px;
+      }
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 60px;
+        height: auto;
+
+        @include laptop {
+          width: 34px;
+        }
+
+        @include mobile {
+          width: 22px;
+        }
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      line-height: 160%;
+    }
+
+    &-text {
+      line-height: 130%;
+    }
+  }
+}

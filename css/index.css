@@ -797,3 +797,96 @@ img {
 .roles__card-text {
   line-height: 130%;
 }
+
+.hierarchy__title {
+  max-width: 812px;
+  margin: 0 0 20px;
+}
+@media (max-width: 768px) {
+  .hierarchy__title {
+    margin-bottom: 40px;
+  }
+}
+.hierarchy__description {
+  margin: 0 0 80px;
+}
+@media (max-width: 576px) {
+  .hierarchy__description {
+    margin-bottom: 40px;
+  }
+}
+.hierarchy__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px 40px;
+}
+@media (max-width: 992px) {
+  .hierarchy__cards {
+    gap: 60px 40px;
+  }
+}
+@media (max-width: 768px) {
+  .hierarchy__cards {
+    gap: 45px 40px;
+  }
+}
+.hierarchy__card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(33.3333333333% - 26.6666666667px);
+  gap: 28px;
+}
+@media (max-width: 992px) {
+  .hierarchy__card {
+    gap: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .hierarchy__card {
+    flex: 1 1 100%;
+  }
+}
+.hierarchy__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 132px;
+  border-radius: 15px;
+  background-color: #3bb4d1;
+}
+@media (max-width: 992px) {
+  .hierarchy__card-icon {
+    width: 75px;
+    height: 75px;
+  }
+}
+@media (max-width: 576px) {
+  .hierarchy__card-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+.hierarchy__card-icon-image {
+  display: block;
+  max-width: 100%;
+  width: 60px;
+  height: auto;
+}
+@media (max-width: 992px) {
+  .hierarchy__card-icon-image {
+    width: 34px;
+  }
+}
+@media (max-width: 576px) {
+  .hierarchy__card-icon-image {
+    width: 22px;
+  }
+}
+.hierarchy__card-title {
+  font-weight: 700;
+  line-height: 160%;
+}
+.hierarchy__card-text {
+  line-height: 130%;
+}
