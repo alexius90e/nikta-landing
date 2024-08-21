@@ -31,6 +31,14 @@ body {
   color: #181d42;
   background-color: #ffffff;
 }
+body.hidden {
+  overflow: hidden;
+}
+@media (max-width: 840px) {
+  body.hidden_md {
+    overflow: hidden;
+  }
+}
 
 a,
 button,
@@ -212,9 +220,12 @@ img {
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   padding: 20px 0;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 .header::before {
   content: "";
@@ -225,6 +236,29 @@ img {
   bottom: 0;
   z-index: 1;
   background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.header::after {
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transition-delay: 0.2s;
+}
+.header.active::after {
+  content: "";
+}
+@media (max-width: 840px) {
+  .header.active::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 1;
+  }
 }
 .header .container {
   display: flex;
@@ -265,8 +299,15 @@ img {
     right: 0;
     z-index: 0 !important;
     padding: 52px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: transform ease-in-out 0.2s;
     transform: translate3d(0, -100vh, 0);
+  }
+}
+@media (max-width: 840px) {
+  .header__menu.active {
+    transform: translate3d(0, 0, 0);
   }
 }
 .header__menu-nav {
@@ -316,11 +357,27 @@ img {
 }
 @media (max-width: 840px) {
   .header__menu-nav-link {
-    padding: 2px 0;
+    font-size: 20px;
+    line-height: 130%;
   }
 }
 .header__menu-nav-link:hover {
   border-bottom-color: #31d3bc;
+}
+.header__menu-close {
+  display: none;
+}
+@media (max-width: 840px) {
+  .header__menu-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: block;
+    height: 32px;
+    width: 32px;
+    border: none;
+    background: url(../assets/Close.svg) center no-repeat;
+  }
 }
 .header__burger {
   flex: 0 0 auto;
@@ -395,6 +452,25 @@ img {
 }
 .header__login-button:active {
   transform: scale(0.98);
+}
+
+.main {
+  padding-top: 100px;
+}
+@media (max-width: 1400px) {
+  .main {
+    padding-top: 88px;
+  }
+}
+@media (max-width: 992px) {
+  .main {
+    padding-top: 82px;
+  }
+}
+@media (max-width: 576px) {
+  .main {
+    padding-top: 72px;
+  }
 }
 
 .footer {

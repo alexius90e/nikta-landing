@@ -1,7 +1,10 @@
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   padding: 20px 0;
-  box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
 
   &::before {
     content: '';
@@ -12,6 +15,30 @@
     bottom: 0;
     z-index: 1;
     background-color: #ffffff;
+    box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+  }
+
+  &::after {
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+    transition-delay: 0.2s;
+  }
+
+  &.active::after {
+    content: '';
+
+    @include laptopsm {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: rgba($color: #000000, $alpha: 0.25);
+      opacity: 1;
+    }
   }
 
   & .container {
@@ -56,8 +83,16 @@
       right: 0;
       z-index: 0 !important;
       padding: 52px 40px;
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
       transition: transform ease-in-out 0.2s;
       transform: translate3d(0, -100vh, 0);
+    }
+
+    &.active {
+      @include laptopsm {
+        transform: translate3d(0, 0, 0);
+      }
     }
 
     &-nav {
@@ -101,12 +136,28 @@
         }
 
         @include laptopsm {
-          padding: 2px 0;
+          font-size: 20px;
+          line-height: 130%;
         }
 
         &:hover {
           border-bottom-color: #31d3bc;
         }
+      }
+    }
+
+    &-close {
+      display: none;
+
+      @include laptopsm {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        display: block;
+        height: 32px;
+        width: 32px;
+        border: none;
+        background: url(../assets/Close.svg) center no-repeat;
       }
     }
   }
