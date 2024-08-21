@@ -101,3 +101,19 @@ img {
     font-size: 16px;
   }
 }
+
+.section {
+  padding: 100px 0;
+
+  @include laptop {
+    padding: 58px 0;
+  }
+
+  @include tablet {
+    padding: 70px 0;
+  }
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
