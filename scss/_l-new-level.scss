@@ -1,0 +1,57 @@
+.new-level {
+  padding: 100px 0;
+  background-color: #3bb4d1;
+
+  @include laptop {
+    padding: 58px 0;
+  }
+
+  @include tablet {
+    padding: 70px 0;
+  }
+
+  @include mobile {
+    padding: 40px 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 866px;
+    margin: 0 auto;
+
+    @include desktop {
+      max-width: 734px;
+    }
+
+    @include laptop {
+      max-width: 594px;
+    }
+
+    @include tablet {
+      max-width: none;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__description {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__connect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
