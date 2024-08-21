@@ -104,6 +104,34 @@ img {
   }
 }
 
+.t-20 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  color: #2a2a2a;
+}
+@media (max-width: 1400px) {
+  .t-20 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 992px) {
+  .t-20 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .t-20 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .t-20 {
+    font-size: 14px;
+  }
+}
+
 .section {
   padding: 100px 0;
 }
@@ -683,4 +711,89 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.roles__title {
+  max-width: 812px;
+  margin: 0 0 80px;
+}
+@media (max-width: 576px) {
+  .roles__title {
+    margin-bottom: 40px;
+  }
+}
+.roles__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px 40px;
+}
+@media (max-width: 992px) {
+  .roles__cards {
+    gap: 60px 40px;
+  }
+}
+@media (max-width: 768px) {
+  .roles__cards {
+    gap: 45px 40px;
+  }
+}
+.roles__card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(33.3333333333% - 26.6666666667px);
+  gap: 28px;
+}
+@media (max-width: 992px) {
+  .roles__card {
+    gap: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .roles__card {
+    flex: 1 1 100%;
+  }
+}
+.roles__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 132px;
+  border-radius: 15px;
+  background: #f3f8fa;
+}
+@media (max-width: 992px) {
+  .roles__card-icon {
+    width: 75px;
+    height: 75px;
+  }
+}
+@media (max-width: 576px) {
+  .roles__card-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+.roles__card-icon-image {
+  display: block;
+  max-width: 100%;
+  width: 60px;
+  height: auto;
+}
+@media (max-width: 992px) {
+  .roles__card-icon-image {
+    width: 34px;
+  }
+}
+@media (max-width: 576px) {
+  .roles__card-icon-image {
+    width: 22px;
+  }
+}
+.roles__card-title {
+  font-weight: 700;
+  line-height: 160%;
+}
+.roles__card-text {
+  line-height: 130%;
 }

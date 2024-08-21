@@ -102,6 +102,30 @@ img {
   }
 }
 
+.t-20 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  color: #2a2a2a;
+
+  @include desktop {
+    font-size: 18px;
+  }
+
+  @include laptop {
+    font-size: 14px;
+  }
+
+  @include tablet {
+    font-size: 20px;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
 .section {
   padding: 100px 0;
 
