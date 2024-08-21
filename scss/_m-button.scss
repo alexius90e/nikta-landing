@@ -1,0 +1,40 @@
+.button {
+  padding: 20px 40px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #31d3bc 0%, #28d6dd 49.5%, #3cb2d0 100%);
+  transition-property: filter, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  cursor: pointer;
+
+  @include desktop {
+    font-size: 22px;
+  }
+
+  @include laptop {
+    font-size: 18px;
+  }
+
+  @include tablet {
+    font-size: 26px;
+  }
+
+  @include mobile {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
