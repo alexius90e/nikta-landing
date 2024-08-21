@@ -1,0 +1,179 @@
+.how-it-work {
+  &__title {
+    margin: 0 0 40px;
+    text-align: center;
+
+    @include mobile {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 80px;
+    text-align: center;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 80px 40px;
+
+    @include laptop {
+      gap: 60px 40px;
+    }
+
+    @include tablet {
+      gap: 45px 40px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 258px;
+    gap: 28px;
+
+    @include desktop {
+      flex: 0 0 216px;
+    }
+
+    @include laptop {
+      flex: 0 0 176px;
+      gap: 16px;
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+      align-items: center;
+    }
+
+    &-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 258px;
+      height: 258px;
+      border-radius: 15px;
+      background: linear-gradient(90deg, #31d3bc 0%, #28d6dd 49.5%, #3cb2d0 100%);
+
+      @include desktop {
+        width: 216px;
+        height: 216px;
+      }
+
+      @include laptop {
+        width: 176px;
+        height: 176px;
+      }
+
+      @include tablet {
+        width: 258px;
+        height: 258px;
+      }
+
+      @include mobile {
+        width: 176px;
+        height: 176px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        z-index: 1;
+        border-radius: 15px;
+        background-color: $white;
+      }
+
+      &-image {
+        position: relative;
+        z-index: 2;
+        display: block;
+        max-width: 100%;
+        width: 117px;
+        height: auto;
+
+        @include mobile {
+          width: 56px;
+        }
+      }
+    }
+
+    & &-icon::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      display: none;
+      width: 280px;
+      aspect-ratio: 6.925 / 1;
+      background: url(../assets/ellipse-line.svg) center no-repeat;
+      background-size: cover;
+
+      @include desktop {
+        width: 340px;
+      }
+
+      @include desktopsm {
+        width: 260px;
+      }
+
+      @include laptop {
+        width: 220px;
+      }
+
+      @include tablet {
+        width: 240px;
+      }
+    }
+
+    &:first-child &-icon::after {
+      top: 40px;
+      left: 90%;
+      display: block;
+
+      @include tablet {
+        top: 180px;
+        left: auto;
+        right: -134px;
+        transform: rotate(90deg);
+      }
+    }
+
+    &:last-child &-icon::after {
+      bottom: 40px;
+      right: 90%;
+      display: block;
+      transform: rotate(180deg);
+
+      @include tablet {
+        bottom: 180px;
+        right: auto;
+        left: -134px;
+        transform: rotate(-90deg);
+      }
+    }
+
+    &-text {
+      text-align: center;
+
+      @include laptop {
+        max-width: 258px;
+        margin: 0 auto;
+      }
+
+      @include mobile {
+        max-width: 176px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

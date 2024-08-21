@@ -4,6 +4,12 @@
   }
 }
 
+@mixin desktopsm {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin laptop {
   @media (max-width: 992px) {
     @content;
