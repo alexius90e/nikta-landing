@@ -131,6 +131,10 @@
       }
 
       @include tablet {
+        width: 320px;
+      }
+
+      @include mobile {
         width: 240px;
       }
     }
@@ -141,10 +145,16 @@
       display: block;
 
       @include tablet {
+        top: 280px;
+        left: auto;
+        right: -180px;
+        transform: rotate(90deg);
+      }
+
+      @include mobile {
         top: 180px;
         left: auto;
         right: -134px;
-        transform: rotate(90deg);
       }
     }
 
@@ -155,10 +165,16 @@
       transform: rotate(180deg);
 
       @include tablet {
+        bottom: 280px;
+        right: auto;
+        left: -180px;
+        transform: rotate(-90deg);
+      }
+
+      @include mobile {
         bottom: 180px;
         right: auto;
         left: -134px;
-        transform: rotate(-90deg);
       }
     }
 

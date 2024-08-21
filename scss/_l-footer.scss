@@ -1,2 +1,127 @@
 .footer {
+  padding: 80px 0;
+  background-color: #2a2a2a;
+
+  @include mobile {
+    padding: 40px 0;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 42px 80px;
+    margin: 0 0 240px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      margin: 0 0 48px;
+    }
+
+    @include mobile {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &-link {
+      color: #ffffff;
+      transition: color ease-in-out 0.1s;
+
+      &:hover {
+        color: #31d3bc;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 126px;
+    margin: 0 0 100px;
+
+    @include tablet {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    @include mobile {
+      gap: 96px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      width: 640px;
+      height: auto;
+      filter: brightness(10);
+
+      @include desktop {
+        width: 540px;
+      }
+
+      @include laptop {
+        width: 436px;
+      }
+
+      @include mobile {
+        width: 576px;
+      }
+    }
+  }
+
+  &__connect {
+    flex: 0 0 auto;
+
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    @include mobile {
+      justify-content: flex-start;
+    }
+  }
+
+  &__copyrights {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 40px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    & a,
+    & span {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 180%;
+      text-align: right;
+      color: #fff;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    & a {
+      color: #ffffff;
+      transition: color ease-in-out 0.1s;
+
+      &:hover {
+        color: #31d3bc;
+      }
+    }
+  }
 }
