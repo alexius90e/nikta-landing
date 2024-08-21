@@ -37,4 +37,9 @@
   &:active {
     transform: scale(0.98);
   }
+
+  &_light {
+    color: #2a2a2a;
+    background: linear-gradient(90deg, #dbf7f3 0%, #d8f7f9 50%, #c6e9f1 100%);
+  }
 }

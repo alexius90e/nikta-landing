@@ -67,27 +67,9 @@
 
   &__description {
     margin: 0 0 40px;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 159%;
-    color: #2a2a2a;
-
-    @include desktop {
-      font-size: 22px;
-    }
-
-    @include laptop {
-      font-size: 16px;
-    }
-
-    @include tablet {
-      font-size: 26px;
-    }
 
     @include mobile {
       margin: 0 0 20px;
-      font-size: 16px;
-      line-height: 150%;
     }
   }
 

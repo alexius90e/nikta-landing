@@ -1,0 +1,38 @@
+.assistants {
+  padding: 100px 0;
+
+  @include laptop {
+    padding: 58px 0;
+  }
+
+  @include tablet {
+    padding: 70px 0;
+  }
+
+  @include mobile {
+    padding: 40px 0;
+  }
+
+  & .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @include mobile {
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    max-width: 640px;
+  }
+
+  &__text {
+    flex: 0 0 calc(50% - 20px);
+
+    @include tablet {
+      flex: 1 1 auto;
+    }
+  }
+}
