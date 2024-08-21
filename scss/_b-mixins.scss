@@ -10,6 +10,12 @@
   }
 }
 
+@mixin laptopsm {
+  @media (max-width: 840px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: 768px) {
     @content;
