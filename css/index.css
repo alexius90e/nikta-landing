@@ -499,3 +499,120 @@ img {
     flex: 1 1 auto;
   }
 }
+
+.advantages {
+  padding: 100px 0;
+}
+@media (max-width: 992px) {
+  .advantages {
+    padding: 58px 0;
+  }
+}
+@media (max-width: 768px) {
+  .advantages {
+    padding: 70px 0;
+  }
+}
+@media (max-width: 576px) {
+  .advantages {
+    padding: 40px 0;
+  }
+}
+.advantages__title {
+  margin: 0 0 80px;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .advantages__title {
+    margin: 0 0 60px;
+  }
+}
+@media (max-width: 768px) {
+  .advantages__title {
+    margin: 0 0 40px;
+  }
+}
+.advantages__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 52px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@media (max-width: 992px) {
+  .advantages__list {
+    gap: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .advantages__list {
+    gap: 12px;
+  }
+}
+@media (max-width: 576px) {
+  .advantages__list {
+    gap: 16px;
+  }
+}
+.advantages__list-item {
+  position: relative;
+  padding: 20px 40px;
+  line-height: 180%;
+  border-radius: 48px;
+  background: linear-gradient(90deg, #31d3bc 0%, #28d6dd 49.5%, #3cb2d0 100%);
+}
+@media (max-width: 992px) {
+  .advantages__list-item {
+    padding: 16px 32px;
+  }
+}
+@media (max-width: 768px) {
+  .advantages__list-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1 1 100%;
+    padding: 0;
+    background: none;
+  }
+}
+.advantages__list-item::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  z-index: 0;
+  border-radius: 48px;
+  background-color: #ffffff;
+}
+@media (max-width: 768px) {
+  .advantages__list-item::before {
+    position: static;
+    flex: 0 0 auto;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../assets/item.svg) center no-repeat;
+  }
+}
+@media (max-width: 576px) {
+  .advantages__list-item::before {
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+  }
+}
+.advantages__list-item > * {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .advantages__list-item > * {
+    position: static;
+  }
+}

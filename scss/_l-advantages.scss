@@ -1,0 +1,108 @@
+.advantages {
+  padding: 100px 0;
+
+  @include laptop {
+    padding: 58px 0;
+  }
+
+  @include tablet {
+    padding: 70px 0;
+  }
+
+  @include mobile {
+    padding: 40px 0;
+  }
+
+  &__title {
+    margin: 0 0 80px;
+    text-align: center;
+
+    @include laptop {
+      margin: 0 0 60px;
+    }
+
+    @include tablet {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 52px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    @include laptop {
+      gap: 28px;
+    }
+
+    @include tablet {
+      gap: 12px;
+    }
+
+    @include mobile {
+      gap: 16px;
+    }
+
+    &-item {
+      position: relative;
+      padding: 20px 40px;
+      line-height: 180%;
+      border-radius: 48px;
+      background: linear-gradient(90deg, #31d3bc 0%, #28d6dd 49.5%, #3cb2d0 100%);
+
+      @include laptop {
+        padding: 16px 32px;
+      }
+
+      @include tablet {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex: 1 1 100%;
+        padding: 0;
+        background: none;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        z-index: 0;
+        border-radius: 48px;
+        background-color: #ffffff;
+
+        @include tablet {
+          position: static;
+          flex: 0 0 auto;
+          display: block;
+          width: 32px;
+          height: 32px;
+          background: url(../assets/item.svg) center no-repeat;
+        }
+
+        @include mobile {
+          width: 24px;
+          height: 24px;
+          background-size: cover;
+        }
+      }
+
+      & > * {
+        position: relative;
+        z-index: 1;
+
+        @include tablet {
+          position: static;
+        }
+      }
+    }
+  }
+}
