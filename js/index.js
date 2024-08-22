@@ -81,3 +81,26 @@ if (contactForm) {
     event.currentTarget.reset();
   });
 }
+
+const header = document.querySelector('header');
+let prevScrollpos = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  if (header) {
+    const currentScrollPos = window.scrollY;
+
+    if (prevScrollpos > currentScrollPos) {
+      header.style.top = '0';
+    } else {
+      header.style.top = '-100px';
+    }
+
+    if (currentScrollPos < 200) {
+      header.classList.remove('shadow');
+    } else {
+      header.classList.add('shadow');
+    }
+
+    prevScrollpos = currentScrollPos;
+  }
+});
