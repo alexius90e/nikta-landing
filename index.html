@@ -6,6 +6,7 @@
     <title>NIKTA</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/index.css" />
+    <script src="https://unpkg.com/imask" defer></script>
     <script type="module" src="./js/index.js" defer></script>
   </head>
 
@@ -59,7 +60,7 @@
               Увеличат продажи, ускорят работу, привлекут клиентов. Нужно что-то ещё? Без проблем.
             </p>
             <div class="first-screen__connect">
-              <button class="first-screen__connect-button button">Давайте общаться</button>
+              <button class="first-screen__connect-button button contact">Давайте общаться</button>
             </div>
           </div>
 
@@ -126,7 +127,7 @@
               оптимизирует ваши бизнес-процессы
             </p>
             <div class="new-level__connect">
-              <button class="new-level__connect-button button button_light">
+              <button class="new-level__connect-button button button_light contact">
                 Идём на новый уровень
               </button>
             </div>
@@ -212,7 +213,7 @@
               выхода на работу
             </p>
             <div class="contact-us__connect">
-              <button class="contact-us__connect-button button">Хочу рассказать</button>
+              <button class="contact-us__connect-button button contact">Хочу рассказать</button>
             </div>
           </div>
         </div>
@@ -331,7 +332,7 @@
           </figure>
 
           <div class="footer__connect">
-            <button class="footer__connect-button button">Давайте общаться</button>
+            <button class="footer__connect-button button contact">Давайте общаться</button>
           </div>
         </div>
 
@@ -341,5 +342,48 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal modal_contact">
+      <div class="modal__body">
+        <div class="modal__content">
+          <h2 class="modal__title h2">Мы свяжемся с вами в течении 15 минут</h2>
+
+          <form class="modal__form">
+            <fieldset class="modal__form-fieldset">
+              <input
+                class="modal__form-input"
+                type="text"
+                placeholder="Как к вам обращаться"
+                minlength="3"
+                required
+              />
+              <span class="modal__form-fieldset-info t-20">Пожалуйста, заполните поле</span>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset">
+              <input
+                class="modal__form-input modal__form-input_tel"
+                type="tel"
+                placeholder="Ваш номер телефона"
+                pattern="\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}"
+                required
+              />
+              <span class="modal__form-fieldset-info t-20">Пожалуйста, проверьте номер</span>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset modal__form-fieldset_submit">
+              <button class="modal__form-submit button">Отправить</button>
+            </fieldset>
+          </form>
+
+          <div class="modal__disclaimer t-20">
+            Нажимая кнопку «Отправить», вы принимаете условия
+            <a href="#">пользовательского соглашения</a>
+          </div>
+
+          <button class="modal__close"></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

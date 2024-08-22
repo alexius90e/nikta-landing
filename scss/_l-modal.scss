@@ -1,0 +1,183 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: 0);
+  pointer-events: none;
+  transition-property: z-index, background-color;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+
+  &.active {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    pointer-events: all;
+    z-index: 300;
+  }
+
+  &__body {
+    position: relative;
+    display: block;
+    max-width: 744px;
+    max-height: 96vh;
+    width: 100%;
+    padding: 84px 40px 40px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: #ffffff;
+    transform: translate3d(0, -120vh, 0);
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
+
+    @include tablet {
+      max-width: calc(100vw - 32px);
+    }
+
+    @include mobile {
+      padding: 84px 16px 40px;
+    }
+
+    .active & {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__content {
+    max-height: calc(96vh - 84px - 40px);
+    padding-right: 8px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background: #dddddd;
+    }
+  }
+
+  &__title {
+    margin: 0 0 60px;
+    text-align: center;
+
+    @include mobile {
+      margin: 0 0 40px;
+      font-size: 22px;
+    }
+  }
+
+  &__form {
+    &-fieldset {
+      margin: 0 0 12px;
+      padding: 0;
+      border: none;
+
+      &_submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 0 0;
+      }
+
+      &-info {
+        display: inline-block;
+        margin: 8px 0 0;
+        padding-left: 16px;
+        color: #9d9d9d;
+        opacity: 0;
+      }
+
+      &:has(.modal__form-input:user-invalid) &-info {
+        opacity: 1;
+        color: #d33737;
+      }
+    }
+
+    &-input {
+      display: inline-block;
+      width: 100%;
+      padding: 16px 24px;
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 159%;
+      color: #2a2a2a;
+      border: 2px solid #9d9d9d;
+      border-radius: 15px;
+      transition-property: border, color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.1s;
+
+      @include desktop {
+        font-size: 22px;
+      }
+
+      @include laptop {
+        font-size: 18px;
+      }
+
+      @include tablet {
+        font-size: 26px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+
+      &:focus {
+        outline-color: rgba($color: #000000, $alpha: 0.05);
+      }
+
+      &:user-valid {
+        border-color: #30ceb5;
+      }
+
+      &:user-invalid {
+        color: #d33737;
+        border-color: #d33737;
+      }
+    }
+  }
+
+  &__disclaimer {
+    margin: 16px 0 0;
+    color: #9d9d9d;
+    text-align: center;
+
+    & a {
+      color: #9d9d9d;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    padding: 0;
+    border: none;
+    background: url(../assets/close.svg) center no-repeat;
+    cursor: pointer;
+
+    @include mobile {
+      top: 24px;
+      right: 16px;
+    }
+  }
+}
